@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'images/logo_gWW_icon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <div class="searchbar">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                <input type="text" placeholder="Enter Your word " name="word">
+                <button type="submit">Search</button></form>
+            </div>
+            <br><br>
+            <div class="result">
+                <div class="details">
+                    <div class="detail_head">
+                        <h1> {{word}} </h1>
+                    </div>
+                    <p class="pos">{{pos}}</p>
+                    <br>
+                    {% for synonyms in syn %}
+                        {{synonyms}}, 
+                    {% endfor %}
+                    <br><br>
+                    <p class="def"><b>Def:</b> {{definition}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <h1>Dictionary</h1>
+    {% load static %}
+    <img src="{% static 'images/logo.png' %}" alt ="lol" height="200"> -->
+</body>
+</html>

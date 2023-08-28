@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: sans-serif;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: rgb(173,85,223);
+    background: linear-gradient(191deg, rgba(173,85,223,1) 35%, rgba(0,212,255,1) 100%);
+}
+.box{
+    background-color: whitesmoke;
+    height: 60vh;
+    width: 40vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 0px 0px 910px black; */
+}
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    /* border: 2px solid rgb(12, 11, 11); */
+    align-items: center;
+    justify-content: center;
+}
+.searchbar input{
+    background: none;
+    border: none;
+    border-bottom: 2px solid rgb(109, 109, 211);
+    height: 3em;
+    width: 21vw;
+    color:rgb(109, 109, 211);
+}
+.searchbar input::placeholder{
+    color: rgb(109, 109, 211);
+    padding: 10px;
+    font-size: 1.2em;
+}
+.searchbar input:focus{
+    outline: none;
+}
+.searchbar button{
+    background-color: rgb(109, 109, 211);
+    border: none;
+    padding: 13px 22px 13px 22px;
+    margin-left: 17px;
+    border-radius: 5px;
+    color: whitesmoke;
+
+}
+.searchbar button:hover{
+    background-color: rgb(57, 57, 131);
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+.result{
+    width: 70%;
+    display: flex;
+    padding: 5px;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.detail_head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 1080px) {
+    .searchbar{
+        flex-direction: column;
+    }
+    .searchbar input{
+        width: 60vw;
+    }
+    .box{
+        width: 90vw;
+    }
+}
+@media screen and (max-width: 520px) {
+    .searchbar{
+        flex-direction: column;
+        /* border: 2px solid red; */
+        height: 20vh;
+        margin-top: -40px;
+    }
+    form{
+        display: flex;
+    }
+    .searchbar input{
+        width: 100%;
+        /* margin-bottom: 20px; */
+    }
+    .searchbar button{
+        margin-left: 0px;
+    }
+    .box{
+        width: 90vw;
+        height: 70vh;
+    }
+}
